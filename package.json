@@ -16,6 +16,9 @@
   "author": "Tom Wilkins",
   "license": "ISC",
   "dependencies": {},
+  "repository": {
+    "url": "https://github.com/tgwilkins/ts-filters"
+  },
   "devDependencies": {
     "typescript": "^4.7.4",
     "eslint": "^7.18.0",
