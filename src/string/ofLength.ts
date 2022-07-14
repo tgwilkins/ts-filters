@@ -7,5 +7,4 @@
  * // ['a']
  * ```
  */
-export const whereLengthEqualTo = (length: number) => (x: string) =>
-  x.length === length;
+export const ofLength = (length: number) => (x: string) => x.length === length;

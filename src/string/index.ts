@@ -1,4 +1,5 @@
 export * from './longerThan';
-export * from './longerThanOrEqualTo';
+export * from './ofMinimumLength';
 export * from './shorterThan';
-export * from './shorterThanOrEqualTo';
+export * from './ofMaximumLength';
+export * from './ofLength';

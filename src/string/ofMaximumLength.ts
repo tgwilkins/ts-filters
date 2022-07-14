@@ -7,4 +7,4 @@
  * // ['a']
  * ```
  */
-export const shorterThanOrEqualTo = (x: number) => (y: string) => y.length <= x;
+export const ofMaximumLength = (x: number) => (y: string) => y.length <= x;

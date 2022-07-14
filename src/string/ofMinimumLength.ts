@@ -6,4 +6,4 @@
  * // ['ab']
  * ```
  */
-export const longerThanOrEqualTo = (x: number) => (y: string) => y.length >= x;
+export const ofMinimumLength = (x: number) => (y: string) => y.length >= x;
