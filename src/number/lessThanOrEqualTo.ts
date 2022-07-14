@@ -6,4 +6,4 @@
  * // [1, 2]
  * ```
  */
-export const lessThanOrEqualTo = (x: number) => (y: number) => y < x;
+export const lessThanOrEqualTo = (x: number) => (y: number) => y <= x;
