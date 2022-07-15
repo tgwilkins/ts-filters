@@ -2,7 +2,13 @@ import { deepEqual, uniqueBy } from '../../src';
 
 describe(deepEqual.name, () => {
   it('Returns true for matching objects', () => {
-    const a = { x: 1, y: 2 };
+    const a = {
+      x: 1,
+      y: 2,
+      z: {
+        a: 1,
+      },
+    };
     const b = { ...a };
     const result = deepEqual(a, b);
     expect(result).toBe(true);
