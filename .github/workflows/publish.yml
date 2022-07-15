@@ -3,20 +3,16 @@ on:
   push:
       branches:
         - 'master'
-      tags:
-        - v**
 jobs:
-  build-test:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-          registry-url: 'https://registry.npmjs.org'
       - run: npm install
-      - run: npm run build
+      - run: npm whoami
+      - run: npm run build      
       - run: npm run test
       - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
