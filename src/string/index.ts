@@ -1,4 +1,5 @@
 export * from './endsWith';
+export * from './includes';
 export * from './longerThan';
 export * from './ofLength';
 export * from './ofMaximumLength';
