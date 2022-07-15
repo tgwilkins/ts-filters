@@ -79,6 +79,7 @@ This includes simple declarative functions that can be used to filter lists of s
 - `ofMaximumLength`
 - `ofMinimumLength`
 - `shorterThan`
+- `startsWith`
 - `usingRegEx`
 
 Each function uses currying to pass down a value to check against, making usage like this:
