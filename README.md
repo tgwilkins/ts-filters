@@ -8,7 +8,7 @@ This package provides a number of functions that can be passed into [Array.proto
 1. [Equality](#equality)
 1. [Number](#number)
 1. [String](#string)
-1. [Unique](#unique)
+1. [Deduplication](#deduplication)
 
 ## Compose
 
@@ -34,11 +34,28 @@ const result = list.filter(passSome(greaterThan(3), multipleOf(2)));
 // returns [2, 4]
 ```
 
+## Equality
+
+Equality functions are provided to compare values.
+
+### equalTo
+
+`equalTo` can be used with primitive values (string, number, boolean) and uses currying to pass down a value use for a strict `===` equality check.
+
+```ts
+[1,2,3].filter(equalTo(1));
+// returns [1]
+```
+
+### deepEqual
+
+`deepEqual` is designed to be used with [uniqueBy](#uniqueBy) to remove duplicate objects or arrays from an array. It recursively checks to account for nested properties, returning true if the two values passed in have the same number of identical keys, all with identical values.
+
+
 ## Number
 
 This includes simple declarative functions that can be used to filter lists of numbers, including:
 
-- `equalTo`
 - `greaterThan`
 - `greaterThanOrEqualTo`
 - `lessThan`
@@ -70,15 +87,19 @@ Each function uses currying to pass down a value to check against, making usage 
 // returns ['abc']
 ```
 
-## Unique
+## Deduplication
 
 This includes methods to remove duplicates from lists.
+
+### unique
 
 `unique` is suitable for de-duping lists of primitive values:
 ```ts
 [1,1,1,1].filter(unique);
 // returns [1]
 ```
+
+### uniqueBy
 
 `uniqueBy` is suitable for lists of more complex values like objects, where you can supply a comparer function to find duplicates. In your comparer function, you can perform as many checks as you like between two items in the list. The comparer should return true when a duplicate has been identified.
 
