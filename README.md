@@ -43,7 +43,7 @@ Equality functions are provided to compare values.
 `equalTo` can be used with primitive values (string, number, boolean) and uses currying to pass down a value use for a strict `===` equality check.
 
 ```ts
-[1,2,3].filter(equalTo(1));
+[1, 2, 3].filter(equalTo(1));
 // returns [1]
 ```
 
@@ -51,6 +51,10 @@ Equality functions are provided to compare values.
 
 `deepEqual` is designed to be used with [uniqueBy](#uniqueBy) to remove duplicate objects or arrays from an array. It recursively checks to account for nested properties, returning true if the two values passed in have the same number of identical keys, all with identical values.
 
+```ts
+[a, a, someObjectLookingLikeA, b].filter(uniqueBy(deepEqual));
+// returns [a, b]
+```
 
 ## Number
 
@@ -97,8 +101,9 @@ This includes methods to remove duplicates from lists.
 ### unique
 
 `unique` is suitable for de-duping lists of primitive values:
+
 ```ts
-[1,1,1,1].filter(unique);
+[1, 1, 1, 1].filter(unique);
 // returns [1]
 ```
 
@@ -107,6 +112,9 @@ This includes methods to remove duplicates from lists.
 `uniqueBy` is suitable for lists of more complex values like objects, where you can supply a comparer function to find duplicates. In your comparer function, you can perform as many checks as you like between two items in the list. The comparer should return true when a duplicate has been identified.
 
 ```ts
-[{ x: 1, y: 2 }, { x: 1, y: 2 }].filter(uniqueBy((a,b) => a.x === b.x && a.y === b.y))
+[
+  { x: 1, y: 2 },
+  { x: 1, y: 2 },
+].filter(uniqueBy((a, b) => a.x === b.x && a.y === b.y));
 // returns [{ x: 1, y: 2 }]
 ```
