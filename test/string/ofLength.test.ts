@@ -1,4 +1,4 @@
-import { ofLength } from '../../src/string/ofLength';
+import { ofLength } from '../../src';
 
 describe(ofLength.name, () => {
   it('Filters for strings equal in length to the given value', () => {

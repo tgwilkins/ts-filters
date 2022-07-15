@@ -1,4 +1,4 @@
-import { passSome } from '../../src/compose/passSome';
+import { passSome } from '../../src';
 
 describe(passSome.name, () => {
   it('Returns true when the item passes any predicates', () => {

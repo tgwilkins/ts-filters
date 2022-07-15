@@ -1,4 +1,4 @@
-import { shorterThan } from '../../src/string';
+import { shorterThan } from '../../src';
 
 describe(shorterThan.name, () => {
   it('Filters for strings shorter than the given value', () => {

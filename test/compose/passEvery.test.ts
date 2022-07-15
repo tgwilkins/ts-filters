@@ -1,4 +1,4 @@
-import { passEvery } from '../../src/compose/passEvery';
+import { passEvery } from '../../src';
 
 describe(passEvery.name, () => {
   it('Returns true when the item passes all predicates', () => {

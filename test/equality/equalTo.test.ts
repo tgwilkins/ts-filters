@@ -1,4 +1,4 @@
-import { equalTo } from '../../src/equality/equalTo';
+import { equalTo } from '../../src';
 
 describe(equalTo.name, () => {
   it('Filters for items that are equal to the given argument', () => {

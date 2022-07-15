@@ -1,4 +1,4 @@
-import { greaterThan } from '../../src/number';
+import { greaterThan } from '../../src';
 
 describe(greaterThan.name, () => {
   it('Filters for numbers that are greater than or equal to the given argument', () => {

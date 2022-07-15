@@ -1,4 +1,4 @@
-import { longerThan } from '../../src/string';
+import { longerThan } from '../../src';
 
 describe(longerThan.name, () => {
   it('Filters for strings longer than the given value', () => {

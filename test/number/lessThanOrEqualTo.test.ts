@@ -1,4 +1,4 @@
-import { lessThanOrEqualTo } from '../../src/number';
+import { lessThanOrEqualTo } from '../../src';
 
 describe(lessThanOrEqualTo.name, () => {
   it('Filters for numbers that are less than or equal to the given argument', () => {

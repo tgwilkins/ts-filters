@@ -1,4 +1,4 @@
-import { lessThan } from '../../src/number';
+import { lessThan } from '../../src';
 
 describe(lessThan.name, () => {
   it('Filters for numbers that are less than the given argument', () => {

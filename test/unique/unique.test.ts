@@ -1,4 +1,4 @@
-import { unique } from '../../src/unique/unique';
+import { unique } from '../../src';
 
 describe(unique.name, () => {
   it('Filters out duplicate values', () => {

@@ -1,4 +1,4 @@
-import { ofMinimumLength } from '../../src/string';
+import { ofMinimumLength } from '../../src';
 
 describe(ofMinimumLength.name, () => {
   it('Filters for strings longer than or equal to the given value', () => {

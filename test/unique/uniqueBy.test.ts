@@ -1,4 +1,4 @@
-import { uniqueBy } from '../../src/unique/uniqueBy';
+import { uniqueBy } from '../../src';
 
 describe(uniqueBy.name, () => {
   const a = { x: 'hello', y: 'world' };

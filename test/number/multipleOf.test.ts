@@ -1,4 +1,4 @@
-import { multipleOf } from '../../src/number/multipleOf';
+import { multipleOf } from '../../src';
 
 describe(multipleOf.name, () => {
   it('Filters for numbers that are multiples of the given argument', () => {
