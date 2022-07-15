@@ -71,7 +71,7 @@ Each function uses currying to pass down a value to check against, making usage 
 
 ## String
 
-This includes simple declarative that can be used to filter lists of strings, including:
+This includes simple declarative functions that can be used to filter lists of strings, including:
 
 - `equalTo`
 - `longerThan`
@@ -79,6 +79,7 @@ This includes simple declarative that can be used to filter lists of strings, in
 - `ofMaximumLength`
 - `ofMinimumLength`
 - `shorterThan`
+- `usingRegEx`
 
 Each function uses currying to pass down a value to check against, making usage like this:
 
