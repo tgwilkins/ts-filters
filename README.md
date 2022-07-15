@@ -65,6 +65,13 @@ This includes simple declarative that can be used to filter lists of strings, in
 - `ofMinimumLength`
 - `shorterThan`
 
+Each function uses currying to pass down a value to check against, making usage like this:
+
+```ts
+['a', 'ab', 'abc'].filter(longerThan(2));
+// returns ['abc']
+```
+
 ## unique
 
 This includes methods to remove duplicates from lists.
