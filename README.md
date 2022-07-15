@@ -4,13 +4,13 @@ This package provides a number of functions that can be passed into [Array.proto
 
 ## Contents
 
-1. [compose](#compose)
-1. [equality](#equality)
-1. [number](#number)
-1. [string](#string)
-1. [unique](#unique)
+1. [Compose](#compose)
+1. [Equality](#equality)
+1. [Number](#number)
+1. [String](#string)
+1. [Unique](#unique)
 
-## compose
+## Compose
 
 These functions allow you to compose complex filters, where multiple predicates can be applied.
 
@@ -34,7 +34,7 @@ const result = list.filter(passSome(greaterThan(3), multipleOf(2)));
 // returns [2, 4]
 ```
 
-## number
+## Number
 
 This includes simple declarative functions that can be used to filter lists of numbers, including:
 
@@ -52,7 +52,7 @@ Each function uses currying to pass down a value to check against, making usage 
 // returns [1, 2]
 ```
 
-## string
+## String
 
 This includes simple declarative that can be used to filter lists of strings, including:
 
@@ -70,7 +70,7 @@ Each function uses currying to pass down a value to check against, making usage 
 // returns ['abc']
 ```
 
-## unique
+## Unique
 
 This includes methods to remove duplicates from lists.
 
