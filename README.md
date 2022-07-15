@@ -73,7 +73,7 @@ Each function uses currying to pass down a value to check against, making usage 
 
 This includes simple declarative functions that can be used to filter lists of strings, including:
 
-- `equalTo`
+- `endsWith`
 - `longerThan`
 - `ofLength`
 - `ofMaximumLength`

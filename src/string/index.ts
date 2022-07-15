@@ -1,3 +1,4 @@
+export * from './endsWith';
 export * from './longerThan';
 export * from './ofLength';
 export * from './ofMaximumLength';
