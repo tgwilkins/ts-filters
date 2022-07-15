@@ -34,14 +34,11 @@ const result = list.filter(passSome(greaterThan(3), multipleOf(2)));
 // returns [2, 4]
 ```
 
-## equality
-
-`equalTo` - Using a strict `===` equality check between two primitive values.
-
 ## number
 
 This includes simple declarative functions that can be used to filter lists of numbers, including:
 
+- `equalTo`
 - `greaterThan`
 - `greaterThanOrEqualTo`
 - `lessThan`
@@ -59,6 +56,7 @@ Each function uses currying to pass down a value to check against, making usage 
 
 This includes simple declarative that can be used to filter lists of strings, including:
 
+- `equalTo`
 - `longerThan`
 - `ofLength`
 - `ofMaximumLength`
