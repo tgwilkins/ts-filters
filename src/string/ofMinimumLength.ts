@@ -2,7 +2,7 @@
  *
  * @param x The minimum length each item should have to pass the predicate.
  * ```ts
- * ['a', 'ab'].filter(longerThanOrEqualTo(2));
+ * ['a', 'ab'].filter(ofMinimumLength(2));
  * // ['ab']
  * ```
  */

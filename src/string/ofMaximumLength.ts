@@ -3,7 +3,7 @@
  * @param x The value each item should be shorter than, or equal to in length to pass the predicate.
  * @example
  * ```ts
- * ['a', 'ab'].filter(shorterThanOrEqualTo(1));
+ * ['a', 'ab'].filter(ofMaximumLength(1));
  * // ['a']
  * ```
  */

@@ -3,7 +3,7 @@
  * @param x The value each item should be equal to in length to pass the predicate.
  * @example
  * ```ts
- * ['a', 'ab'].filter(whereLengthEqualTo(1));
+ * ['a', 'ab'].filter(ofLength(1));
  * // ['a']
  * ```
  */
