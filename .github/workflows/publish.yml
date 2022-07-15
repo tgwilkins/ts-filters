@@ -3,10 +3,8 @@ on:
   push:
       branches:
         - 'master'
-      tags:
-        - v**
 jobs:
-  build-test:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,8 +12,8 @@ jobs:
         with:
           node-version: '16'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm install
-      - run: npm run build
+      - run: npm ci
+      - run: npm run build      
       - run: npm run test
       - run: npm publish
         env:
