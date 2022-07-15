@@ -12,3 +12,5 @@ jobs:
       - run: npm whoami
       - run: npm run build
       - run: npm run test
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
