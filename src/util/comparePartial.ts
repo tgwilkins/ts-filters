@@ -1,4 +1,4 @@
-import { DeepPartial } from '../models/DeepPartial';
+import { DeepPartial } from '../models';
 import { isPrimitiveOrNull } from './isPrimitiveOrNull';
 import { objectKeys } from './objectKeys';
 

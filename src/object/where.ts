@@ -1,4 +1,4 @@
-import { DeepPartial } from '../models/DeepPartial';
+import { DeepPartial } from '../models';
 import { comparePartial } from '../util/comparePartial';
 
 export const where =
