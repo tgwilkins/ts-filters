@@ -7,6 +7,7 @@ This package provides a number of functions that can be passed into [Array.proto
 1. [Compose](#compose)
 1. [Equality](#equality)
 1. [Number](#number)
+1. [Object](#object)
 1. [String](#string)
 1. [Deduplication](#deduplication)
 
@@ -71,6 +72,25 @@ Each function uses currying to pass down a value to check against, making usage 
 ```ts
 [1, 2, 3, 4].filter(lessThan(3));
 // returns [1, 2]
+```
+
+## Object
+
+This includes filters for lists of objects or data structures.
+
+### where
+
+`where` allows you to pass a partial representation of the objects contained in the array, much like a query, returning objects that have the given properties with the given values.
+
+```ts
+const a = { x: 1, y: { nested: { property: 'hello' } } };
+const b = { x: 1, y: { nested: { property: 'goodbye' } } };
+
+[a, b].filter(where({ x: 1 }));
+// returns [a, b]
+
+[a, b].filter(where({ y: { nested: { property: 'goodbye' } } }));
+// returns [b]
 ```
 
 ## String
