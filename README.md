@@ -93,6 +93,24 @@ const b = { x: 1, y: { nested: { property: 'goodbye' } } };
 // returns [b]
 ```
 
+### whereBy
+
+`whereBy` works in a similar way to `where`, but instead of providing literal values for each item in the list to match, you can provide functions to test each property against.
+
+```ts
+const a = { x: 1, y: { nested: { property: 'hello' } } };
+const b = { x: 1, y: { nested: { property: 'goodbye' } } };
+
+[a, b].filter(whereBy({ x: (x) => x === 1 }));
+// returns [a, b]
+
+[a, b].filter(whereBy({ y: { nested: { property: (property) => property.length > 5  } } }));
+// returns [b]
+
+[a, b].filter(whereBy({ x: (x) => x === 1, y: { nested: { property: (property) => property === 'hello' } }}));
+// returns [a]
+```
+
 ## String
 
 This includes simple declarative functions that can be used to filter lists of strings, including:
