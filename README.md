@@ -15,24 +15,32 @@ This package provides a number of functions that can be passed into [Array.proto
 
 These functions allow you to compose complex filters, where multiple predicates can be applied.
 
-### passEvery
+### and
 
-Using `passEvery`, each item in the array needs to pass every predicate supplied to be returned in the resulting array.
+Using `and`, each item in the array needs to pass every predicate supplied to be returned in the resulting array.
 
 ```ts
 const list = [1, 2, 3, 4];
-const result = list.filter(passEvery(greaterThan(2), multipleOf(2)));
+const result = list.filter(and(greaterThan(2), multipleOf(2)));
 // returns [4]
 ```
 
-### passSome
+### or
 
-`passSome` also accepts any number of predicates, but each item only needs to pass one of them to be returned in the resulting array.
+`or` also accepts any number of predicates, but each item only needs to pass one of them to be returned in the resulting array.
 
 ```ts
 const list = [1, 2, 3, 4];
-const result = list.filter(passSome(greaterThan(3), multipleOf(2)));
+const result = list.filter(or(greaterThan(3), multipleOf(2)));
 // returns [2, 4]
+```
+
+You can even use both in conjunction with each other to compose complex predicates.
+
+```ts
+const list = [1, 2, 3, 4];
+const result = list.filter(and(or(equalTo(1), equalTo(3)), greaterThan(1)));
+// returns [3]
 ```
 
 ## Equality
@@ -82,7 +90,6 @@ This includes filters for lists of objects or data structures.
 
 `where` allows you to pass a partial representation of the objects contained in the array, much like a query. Expected values can either be defined literally, or a predicate function can be used to for the property to pass. The predicate can be defined at any level of nesting, allowing you to go as deep into the object structure as you need to.
 
-
 ```ts
 const a = { x: 1, y: { nested: { property: 'hello' } } };
 const b = { x: 1, y: { nested: { property: 'goodbye' } } };
@@ -94,13 +101,17 @@ const b = { x: 1, y: { nested: { property: 'goodbye' } } };
 [a, b].filter(where({ y: { nested: { property: 'goodbye' } } }));
 // returns [b]
 
-
 // Query with predicate function
 [a, b].filter(where({ x: (x) => x > 0 }));
 // returns [a, b]
 
 // Mix of literal and predicate function query
-[a, b].filter(where({ x: 1, y: { nested: { property: (property) => property.startsWith('good') } } }));
+[a, b].filter(
+  where({
+    x: 1,
+    y: { nested: { property: (property) => property.startsWith('good') } },
+  })
+);
 // returns [b]
 ```
 
