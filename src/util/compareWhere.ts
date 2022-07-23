@@ -1,17 +1,17 @@
-import { DeepPartial } from '../models';
+import { Where } from '..';
 import { isPrimitiveOrNull } from './isPrimitiveOrNull';
 import { objectKeys } from './objectKeys';
 
-export const comparePartial = <T extends {}>(
-  a: DeepPartial<T>,
-  b: T
-): boolean => {
+export const compareWhere = <T extends {}>(a: Where<T>, b: T): boolean => {
   return objectKeys(a).every((key) => {
     const valueA = a[key];
     const valueB = b[key];
+    if (typeof valueA === 'function') {
+      return valueA(valueB);
+    }
     if (isPrimitiveOrNull(valueA) || !valueA) {
       return valueA === valueB;
     }
-    return comparePartial(valueA!, valueB);
+    return compareWhere(valueA as Where<typeof valueB>, valueB);
   });
 };

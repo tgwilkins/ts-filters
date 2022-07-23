@@ -1,5 +1,5 @@
-import { DeepPartial } from '../models';
-import { comparePartial } from '../util/comparePartial';
+import { Where } from '..';
+import { compareWhere } from '../util/compareWhere';
 
 /**
  *
@@ -18,6 +18,6 @@ import { comparePartial } from '../util/comparePartial';
 ```
  */
 export const where =
-  <T extends object>(properties: DeepPartial<T>) =>
+  <T extends object>(properties: Where<T>) =>
   (item: T) =>
-    comparePartial(properties, item);
+    compareWhere(properties, item);
