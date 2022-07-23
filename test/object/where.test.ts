@@ -82,6 +82,6 @@ describe(where.name, () => {
         },
       })
     );
-    expect(result).toEqual([b]);
+    expect(result).toEqual([]);
   });
 });

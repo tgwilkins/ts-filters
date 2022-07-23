@@ -17,8 +17,7 @@ describe(compareWhere.name, () => {
     const a = {
       my: {
         nested: {
-          property: { x: (x: number) => x === 1 },
-          y: (y: number) => y > 0,
+          property: { x: (x: number) => x === 1, y: (y: number) => y > 0 },
         },
       },
     };
@@ -30,8 +29,7 @@ describe(compareWhere.name, () => {
     const a = {
       my: {
         nested: {
-          property: { x: (x: number) => x === 1 },
-          y: (y: number) => y > 1,
+          property: { x: (x: number) => x === 1, y: (y: number) => y > 1 },
         },
       },
     };
